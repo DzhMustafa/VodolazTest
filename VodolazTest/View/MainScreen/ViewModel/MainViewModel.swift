@@ -22,7 +22,7 @@ final class MainViewModel: ObservableObject {
     
     func getAllProducts() async {
         do {
-            try await service.getAllProducts()
+            try await service.fetchAllProducts()
             
             let sections = service.getSectionNames()
             

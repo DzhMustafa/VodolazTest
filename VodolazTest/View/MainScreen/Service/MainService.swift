@@ -5,7 +5,7 @@ protocol MainServiceProtocol: AnyObject {
     
     var networkService: NetworkService { get }
     
-    func getAllProducts() async throws -> Void
+    func fetchAllProducts() async throws -> Void
     
     func getSectionNames() -> [String]
 }
@@ -19,7 +19,7 @@ final class MainService: MainServiceProtocol {
         self.networkService = networkService
     }
     
-    func getAllProducts() async throws  {
+    func fetchAllProducts() async throws  {
         let endpoint = Endpoint.glavnaya
                 
         let responce: ProductResponce = try await networkService.get(with: endpoint.url)
